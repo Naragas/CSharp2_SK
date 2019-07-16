@@ -1,0 +1,9 @@
+D:\GitHub\CSharp2_SK\Asteroids\bin\Debug\Asteroids.exe.config
+D:\GitHub\CSharp2_SK\Asteroids\bin\Debug\Asteroids.exe
+D:\GitHub\CSharp2_SK\Asteroids\bin\Debug\Asteroids.pdb
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.Properties.Resources.resources
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.cache
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.exe
+D:\GitHub\CSharp2_SK\Asteroids\obj\Debug\Asteroids.pdb
