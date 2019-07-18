@@ -17,11 +17,18 @@ namespace Asteroids
         public static BaseObject[] _objs;
         public static void Load()
         {
+            
             _objs = new BaseObject[30];
-            for (int i = 0; i < _objs.Length; i++)
+            _objs[0] = new Spaceship(new Point(0, 300), new Point(0, 0), new Size(40, 30));
+            for (int i = 1; i < 5; i++)
+            {
+                _objs[i] = new Ufo(new Point(800+ rnd.Next(50,500), rnd.Next(50, (Height-50))), new Point(-2, 0), new Size(5, 5));
+            }
+            for (int i = 5; i < _objs.Length; i++)
             {
                 _objs[i] = new Star(new Point(rnd.Next(200, Width), rnd.Next(0, 600)), new Point(i, 0), new Size(5, 5));
             }
+            
         }
         public static int Width { get; set; }
         public static int Height { get; set; }
@@ -45,11 +52,13 @@ namespace Asteroids
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
             Load();
 
+
         }
 
         public static void Draw()
         {
             Buffer.Graphics.DrawImage(background, new Point(0, 0));
+            
             //Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
             //Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
             foreach (BaseObject obj in _objs)
@@ -61,6 +70,7 @@ namespace Asteroids
 
         public static void Update()
         {
+            
             foreach (BaseObject obj in _objs)
             {
                 obj.Update();
@@ -72,5 +82,8 @@ namespace Asteroids
             Draw();
             Update();
         }
+        
+
+
     }
 }

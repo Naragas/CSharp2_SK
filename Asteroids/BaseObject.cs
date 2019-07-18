@@ -13,6 +13,9 @@ namespace Asteroids
         protected Point Pos;
         protected Point Dir;
         protected Size Size;
+
+         
+
         public BaseObject(Point pos,Point dir,Size size)
         {
             Pos = pos;
@@ -25,7 +28,14 @@ namespace Asteroids
         {
             Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
-
+        public virtual void MoveTop()
+        {
+            Dir.Y -= 1;
+        }
+        public virtual void MoveBot()
+        {
+            Dir.Y += 1;
+        }
         public virtual void Update()
         {
             Pos.X = Pos.X + Dir.X;
