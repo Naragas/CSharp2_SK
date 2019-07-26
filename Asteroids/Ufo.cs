@@ -10,7 +10,7 @@ namespace Asteroids
     class Ufo : BaseObject
     {
         static Image ufo = Image.FromFile("ufo.png");
-        Random r = new Random();
+
         int a;
         public Ufo(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -23,6 +23,15 @@ namespace Asteroids
             Game.Buffer.Graphics.DrawImage(ufo, Pos.X, Pos.Y);
         }
 
+        public void NewPossition()
+        {
+            a = Game.rnd.Next(50, 550);
+        }
+        public override void NiceShot()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Update()
         {
 
@@ -30,8 +39,8 @@ namespace Asteroids
             Pos.Y = (int)Math.Round(a + 50 * Math.Sin(25 * Pos.X));
             if (Pos.X < (0 - 50))
             {
-                Pos.X = Game.Width + r.Next(100,400);
-                //a = r.Next(50, 550); Как сделать так чтобы каждый экземпляр появляся со своей координатой?
+                Pos.X = Game.Width + Game.rnd.Next(100,400);
+                NewPossition(); //Как сделать так чтобы каждый экземпляр появляся со своей координатой?
             }
         }
     }
