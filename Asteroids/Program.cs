@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Сахаров Иван.
+/// Игра "Астероиды"
+/// </summary>
+
 namespace Asteroids
 {
     class Program
@@ -16,12 +21,12 @@ namespace Asteroids
                 Width = 800,
                 Height = 600
             };
-
-
+            
             Game.Init(form);
             form.Show();
             Game.Load();
             Game.Draw();
+
             Application.Run(form);
         }
     }

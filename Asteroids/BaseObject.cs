@@ -47,7 +47,7 @@ namespace Asteroids
         public abstract void Update();
 
         /// <summary>
-        /// Меток NiceShot переопределяет положение объекта после столкновения с пулей.
+        /// Меток NiceShot переопределяет положение объекта после попадания пули или столконовения с кораблем.
         /// </summary>
         public abstract void NiceShot();
 

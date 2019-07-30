@@ -28,6 +28,7 @@ namespace Asteroids
         public Spaceship(Point pos,Point dir, Size size) : base(pos, dir, size)
         {
             
+            
         }
         public override void Draw()
         {
@@ -46,11 +47,15 @@ namespace Asteroids
         public void MoveHorizontal( int Direction)
         {
             Pos.X += Direction*Dir.X;
+            if (Pos.X <= 0) Pos.X = 0;
+            if (Pos.X > (Game.Width - spaceShip.Width)) Pos.X = Game.Width - spaceShip.Width;
         }
 
         public void MoveVertical(int Direction)
         {
             Pos.Y += Direction*Dir.Y;
+            if (Pos.Y <= 0) Pos.Y = 0;
+            if (Pos.Y > (Game.Height - spaceShip.Height)) Pos.Y = Game.Height - spaceShip.Height;
         }
         public void Die()
         {

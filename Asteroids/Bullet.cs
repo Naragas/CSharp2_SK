@@ -28,6 +28,7 @@ namespace Asteroids
         public override void Update()
         {
             Pos.X +=Dir.X;
+
         }
     }
 }

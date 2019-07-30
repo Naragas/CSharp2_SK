@@ -13,7 +13,10 @@ namespace Asteroids
         static Image asteroidLow = Image.FromFile("asteroidLow.png");
         static Image asteroidMedium = Image.FromFile("asteroidMedium.png");
         static Image asteroidLarge = Image.FromFile("asteroidlarge.png");
+        //Power - параметр от которого зависит как урон по кораблю, так и награда за уничтожения астероида, так же чем больше Power, тем больше требуется попаданий по астероиду для его уничтожения.
         public int Power { get; set; }
+
+        // Reward - награда за уничтожение астероида.
         public int Reward { get; set; }
         public Asteroid(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -24,7 +27,9 @@ namespace Asteroids
             SizeAndPowerRelation();
 
         }
-
+        /// <summary>
+        /// Метод отвечающий за отрисовываемое изображение астероида в зависимости от его можности.
+        /// </summary>
         private void SizeAndPowerRelation()
         {
             if (Power == 1)
@@ -41,6 +46,9 @@ namespace Asteroids
             }
         }
 
+        /// <summary>
+        /// Метод присваивающий мощность астероиду в зависимости от размера присвоенного при создании каждого экземпляра класса.
+        /// </summary>
         private void GetPowerFromSize()
         {
             if (Size.Width >= 0 && Size.Width < 25)

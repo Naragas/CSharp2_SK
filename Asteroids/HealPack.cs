@@ -10,6 +10,8 @@ namespace Asteroids
     class HealPack : BaseObject
     {
         static Image healpack = Image.FromFile("healpack.png");
+        
+        //HealPower - параметр отвечающий за то сколько энергии будет восстановлено кораблю.
         public int HealPower { get; }
         public HealPack(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -20,6 +22,10 @@ namespace Asteroids
             Game.Buffer.Graphics.DrawImage(healpack, Pos.X, Pos.Y);
         }
 
+
+        /// <summary>
+        /// Метод восстанавливает аптечку после того как она была поймана кораблем.
+        /// </summary>
         public override void NiceShot()
         {
             Pos.X = 2000;
